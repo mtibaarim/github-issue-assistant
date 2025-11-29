@@ -21,7 +21,7 @@ def analyze_github_issues(repo_name, github_token, model_name=None, post_comment
         results.append({"issue_number": issue.number, "issue_title": issue.title, "suggestion": suggestion})
 
         if post_comments:
-            comment = f"## 🤖 AI Issue Analysis\n\n{suggestion.strip()}\n\n---\n*This is an automated suggestion. Please consider its accuracy in context.*"
+            comment = f"## AI Issue Analysis\n\n{suggestion.strip()}\n\n---\n*This is an automated suggestion. Please consider its accuracy in context.*"
             issue.create_comment(comment)
             print(f"Posted comment on Issue #{issue.number}")
         else:

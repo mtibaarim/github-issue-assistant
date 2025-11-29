@@ -35,6 +35,7 @@ def main():
         temperature=0.0,
     )
 
+
     suggestion = analyzer.run(
         title=issue.title,
         body=issue.body ,
@@ -42,7 +43,7 @@ def main():
     ).strip()
 
     comment = (
-        "## 🤖 AI Issue Analysis\n\n"
+        "## AI Issue Analysis\n\n"
         f"{suggestion}\n\n"
         "---\n"
         "*This is an automated suggestion. Please consider its accuracy in context.*"
