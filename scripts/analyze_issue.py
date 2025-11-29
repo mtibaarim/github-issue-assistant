@@ -24,7 +24,7 @@ def main():
     repo_full_name = event["repository"]["full_name"]  
     issue_number = event["issue"]["number"]
 
-    print(f"🔧 Repo: {repo_full_name}, issue #{issue_number}")
+    print(f"Repo: {repo_full_name}, issue #{issue_number}")
 
     gh = Github(github_token)
     repo = gh.get_repo(repo_full_name)
@@ -50,7 +50,7 @@ def main():
     )
 
     issue.create_comment(comment)
-    print(f"✅ Posted AI comment on issue #{issue.number}")
+    print(f"Posted AI comment on issue #{issue.number}")
 
 if __name__ == "__main__":
     main()

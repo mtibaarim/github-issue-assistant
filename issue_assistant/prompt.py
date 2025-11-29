@@ -18,7 +18,6 @@ except Exception:
                 self.template = template
 
             def format(self, **kwargs):
-                # Basic Python str.format-based rendering
                 return self.template.format(**kwargs)
 
 
