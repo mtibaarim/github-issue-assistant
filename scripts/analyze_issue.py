@@ -1,9 +1,16 @@
-import json
 import os
+import sys
 
-from github import Github
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+REPO_ROOT = os.path.dirname(CURRENT_DIR)
+if REPO_ROOT not in sys.path:
+    sys.path.insert(0, REPO_ROOT)
+
 from issue_assistant.llm_factory import create_issue_analyzer
+from github import Github
 from dotenv import load_dotenv
+import json
+
 
 def main():
     load_dotenv()
