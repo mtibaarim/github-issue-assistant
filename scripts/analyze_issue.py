@@ -35,11 +35,9 @@ def main():
         temperature=0.0,
     )
 
-    body = issue.body or "[No description provided]"
-
     suggestion = analyzer.run(
         title=issue.title,
-        body=body,
+        body=issue.body ,
         repo_name=repo_full_name,
     ).strip()
 

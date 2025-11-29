@@ -12,11 +12,11 @@ def analyze_github_issues(repo_name, github_token, model_name=None, post_comment
 
         body = issue.body if issue.body else "No description provided."
 
-        suggestion = issue_analyzer.run({
-            "title": issue.title,
-            "body": body,
-            "repo_name": repo_name,
-        })
+        suggestion = issue_analyzer.run(
+            title=issue.title,
+            body=body,
+            repo_name=repo_name,
+        )
 
         results.append({"issue_number": issue.number, "issue_title": issue.title, "suggestion": suggestion})
 
